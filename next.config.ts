@@ -1,11 +1,16 @@
 import createMDX from "@next/mdx";
 import type { NextConfig } from "next";
 
+const basePath = process.env.PAGES_BASE_PATH || "";
+
 const nextConfig: NextConfig = {
   output: "export", // Enables static export
   images: { unoptimized: true },
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
-  basePath: process.env.PAGES_BASE_PATH ?? "",
+  basePath,
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
+  },
   turbopack: {
     rules: {
       "*.svg": {
