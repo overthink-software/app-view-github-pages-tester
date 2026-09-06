@@ -14,7 +14,9 @@ interface AppIconProps {
   filter?: "none" | "grayscale";
 }
 
-const PLACEHOLDER_SRC = "/app_view/icon_placeholder.png";
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
+const PLACEHOLDER_SRC = `${basePath}/app_view/icon_placeholder.png`;
 
 export function AppIcon({
   src,
