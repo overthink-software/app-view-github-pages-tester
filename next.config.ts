@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   output: "export", // Enables static export
   images: { unoptimized: true },
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
+  basePath: process.env.PAGES_BASE_PATH ?? "",
   turbopack: {
     rules: {
       "*.svg": {
