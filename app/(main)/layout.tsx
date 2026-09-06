@@ -58,6 +58,8 @@ export const viewport: Viewport = {
   initialScale: 1.0,
 };
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 export default function RootLayout({
   children,
 }: {
@@ -80,7 +82,7 @@ export default function RootLayout({
         <ThemeProvider>
           {!IS_WAITLIST_ENABLED && (
             <Navbar
-              icon={<AppIcon src="/app_view/icon_placeholder.png" />}
+              icon={<AppIcon src={`${basePath}/app_view/icon_placeholder.png`} />}
               appName="App Name"
               links={[
                 { label: "Features", href: "#features" },
