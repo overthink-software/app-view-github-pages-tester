@@ -83,7 +83,7 @@ export default function RootLayout({
           {!IS_WAITLIST_ENABLED && (
             <Navbar
               icon={<AppIcon src={`${basePath}/app_view/icon_placeholder.png`} />}
-              appName="App Name"
+              appName={basePath}
               links={[
                 { label: "Features", href: "#features" },
                 // Uncomment the line below once you're ready to start using Release Notes
